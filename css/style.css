@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:wght@500&display=swap');
+ /*font-family: 'Epilogue', sans-serif;*/
+ 
+ *{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ /*root elementer for et bedre overblik i koden*/
+ :root {
+   --black: #000000;
+   --white: #ffffff;
+   --darkblue: #39404B;
+   --lightblue: #ebf4ff;
+   --seablue: #7cbbe5;
+   --darkseablue: #1d6077;
+   --jollyred: #ee272e;
+ 
+   --font: 'Epilogue', sans-serif;
+ 
+ }
+
+ .overdemalle{
+     display: flex;
+     flex-direction: row;
+ }
+
+
+ .overskrift{
+     font-family: var(--font);
+     font-size: 60px;
+     margin-top: 60px;
+     text-align: center;
+
+ }
+
+ .navigationsover{
+     width: 400px;
+     height: 74vh;
+     position: fixed;
+     background-color: rgb(224, 224, 224);
+     margin-top: 200px;
+     border-radius: 25px;
+ }
+
+ .menumenu{
+     padding-top: 40px;
+     text-align: center;
+
+ }
+
+ .navlist{
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 16px;
+  
+  }
+
+  .navlist li {
+   padding-top: 20px;
+   padding-left: 20px;
+  }
+  
+  .navlist li a{
+    transition: 0.1s;
+    list-style: none;
+    color: var(--black);
+    text-decoration: none;
+    transition-duration: 0.2s ;
+    transition-property: color ;
+  }
+  .navlist li a:hover{
+    color: var(--jollyred);
+  }
+.menuitems{
+    width: 100%;
+    height: 100%;
+    padding-left: 400px;
+
+}
+
+.firstrow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 40px calc((100% - (255px * 3)) / 5);
+}
+
+.menuer{
+    width: 300px;
+    height: 400px;
+    background-color: rgb(224, 224, 224);
+    margin-top: 40px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.burgerbillede{
+    width: 300px;
+    height: auto;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.kurven{
+    background-color: rgb(224, 224, 224);
+    width: 300px;
+    height: 74vh;
+    position: relative;
+    position: fixed;
+    right: 0;
+    border-radius: 25px;
+    font-family: var(--font);
+    text-align: center;
+    padding-top: 40px;
+}
+
+.around{
+    width: 300px;
+    height: 80vh;
+    position: relative;
+    margin-top: 200px;
+}
+
+.betaling{ 
+    position: absolute;
+    bottom: 25px;
+    left: 33%;
+    background-color: rgb(49, 49, 49);
+    border: none;
+    color: white;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sprog{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.btnla{
+    border: none;
+    background-color: rgb(49, 49, 49);
+    width: 80px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    
+    
+}
+h2{
+    font-family: var(--font);
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.btnplus{
+    border:none;
+    width: 50px;
+    height: 30px;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(49, 49, 49);
+    border-radius: 27px;
+    color: white;
+    margin-top: 100px;
+
+}
+
+.alle{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menusprog{
+    padding-top: 40px;
+    text-align: center;
+    margin-top: 180px;
+}

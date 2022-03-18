@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Demo: Add custom markers in Mapbox GL JS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+href="https://fonts.googleapis.com/css?family=Open+Sans"
+rel="stylesheet"
+/>
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+<link
+href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css"
+rel="stylesheet"
+/>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:wght@500&display=swap');
+ /*font-family: 'Epilogue', sans-serif;*/
+ 
+ *{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ /*root elementer for et bedre overblik i koden*/
+ :root {
+   --black: #000000;
+   --white: #ffffff;
+   --darkblue: #39404B;
+   --lightblue: #ebf4ff;
+   --seablue: #7cbbe5;
+   --darkseablue: #1d6077;
+   --jollyred: #ee272e;
+ 
+   --font: 'Epilogue', sans-serif;
+ 
+ }
+body {
+margin: 0;
+padding: 0;
+}
+#map {
+position: absolute;
+top: 0;
+bottom: 0;
+width: 90%;
+margin-left: 5%;
+height: 80%;
+margin-top: 170px;
+}
+.marker {
+background-image: url(images/ikonmad.jpg);
+background-size: cover;
+width: 50px;
+height: 50px;
+border-radius: 50%;
+cursor: pointer;
+}
+.mapboxgl-popup {
+max-width: 200px;
+}
+.mapboxgl-popup-content {
+text-align: center;
+font-family: 'Open Sans', sans-serif;
+}
+
+body{
+    background-image: url(images/krydderier.jpg);
+    width: 100%;
+    height: 100vh;
+}
+.overskrifter{
+    font-family: var(--font);
+    color: whitesmoke;
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+h1{
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+#tilbage{
+    border: none;
+    font-family: var(--font);
+    font-size: 20px;
+    width: 250px;
+    height: 50px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    background-color: rgb(224, 224, 224);
+    color: black;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="overskrifter">
+    <h1>Oversigt over hvor vores <br> krydderier kommer fra.</h1>
+   <a href="index.html"><button onclick="tilbage" id="tilbage">Tilbage til bestilling</button></a> 
+
+  </div>
+  <div id="map"></div>
+</div>
+ 
+<script>
+// Her bliver den personlige token fra mapbox indlæst
+mapboxgl.accessToken = 'pk.eyJ1IjoibWlra2VsYmlya2VnYWFyZCIsImEiOiJja3ZyNnk4azkyOG40MndrbDN1dGFndHpuIn0.w0HuZnX7LTKs8Veuccd8dg';
+ 
+// Geojson der definerer de enkelte punkter på mappet
+const geojson = {
+'type': 'FeatureCollection',
+'features': [
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [9.66348396280696, 56.213703207309955]
+},
+'properties': {
+'title': 'GRØNSAGER',
+'description': 'Alle vores grønsager stammer fra en lokal farm som dyrker økologi',
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-112.82034800358856, 53.02345865343635 ]
+},
+'properties': {
+'title': 'KØD',
+'description': 'Vi får alt vores kød fra Canada',
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-58.519474258904786, -34.604501056984816]
+},
+'properties': {
+'title': 'Krydderier',
+'description': 'Alle krydderier stammer fra Argentina',
+}
+},
+{
+'type': 'Feature',
+'geometry': {
+'type': 'Point',
+'coordinates': [-52.08435490504072, 65.13133394315253]
+},
+'properties': {
+'title': 'FISK',
+'description': 'Alt vores fisk stammer fra grønland',
+}
+}
+]
+};
+ 
+// her definerer man hvordan mappet bliver vist på sitet, samt hvilket style fra mapbox der skal benyttes
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/mapbox/light-v10',
+center: [-28.323852544548195, 25.57626779171434],
+zoom: 2,
+pitch: 40,
+});
+ 
+// Tilføj markers til map 
+for (const feature of geojson.features) {
+// Her bliver der oprettet et HTML element for hver "feature" i geojson
+const el = document.createElement('div');
+el.className = 'marker';
+ 
+// Her bliver markeren lavet og tilføjet til mappet
+new mapboxgl.Marker(el)
+.setLngLat(feature.geometry.coordinates)
+.setPopup(
+new mapboxgl.Popup({ offset: 25 }) // add popups
+.setHTML(
+`<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+)
+)
+.addTo(map);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>bestillingspanel</title>
+</head>
+<body>
+<div class="overdemalle">
+    <section class="navigationsover">
+        <h2 class="menumenu">menu</h2>
+
+        <nav>
+            <div id="visDet">
+                <ul class="navlist">
+                  <li><a href="#">Foretter</a></li>
+                  <li><a href="#">hovedretter</a></li>
+                  <li><a href=" #">desserter</a></li>
+                  <li><a href=" #">Sodanvand</a></li>
+                  <li><a href=" #">Øl</a></li>
+                  <li><a href="#">Vin</a></li>
+                  <li><a href="mapbox.html">Råvarer map</a></li>
+                </ul>
+              </div>
+        </nav>
+        <h2 class="menusprog">sprog</h2>
+        <div class="sprog">
+            <button class="btnla" onclick="changeLanguage('da')">
+                Dansk
+                </button>
+            <button class="btnla" onclick="changeLanguage('eng')">
+                English
+            </button>
+            <button class="btnla" onclick="changeLanguage('ger')">
+                Deutsch
+            </button>
+    </section>
+
+    <section class="menuitems">
+
+        <h1 id="siteContent" class="overskrift">Bestil din mad her</h1>
+
+        <!-- Her er de enkelte mad elememnter lavet. Udover det er der benyttet et libary fra michalsnik som hedder aos -->
+        <section class="firstrow">
+            <div class="menuer" data-aos="flip-down" data-aos-delay="500" data-aos-duration="1000" id="burger">
+            <img class="burgerbillede" src="images/ruller.jpg" alt="burger">
+            <div class="alle" id="test">
+             <h2>Ny fortolket forårsruller</h2>
+                 <button class="btnplus">+</button>
+             </div>
+             </div>
+            <div class="menuer" data-aos="flip-down" data-aos-delay="500" data-aos-duration="1000" id="pizza">
+                <img class="burgerbillede" src="images/salat.jpg" alt="burger">
+                <div class="alle" id="prove">
+                    <h2>Salat</h2>
+                        <button class="btnplus">+</button>
+                    </div>
+            </div>
+            <div class="menuer" data-aos="flip-down" data-aos-delay="500" data-aos-duration="1000" id="pita">
+                <img class="burgerbillede" src="images/kagenr1.jpg" alt="burger">
+                <div class="alle" id="provekylling">
+                    <h2>Hindbærkage</h2>
+                        <button class="btnplus">+</button>
+                    </div>
+            </div>
+        
+
+
+        
+            <div class="menuer" data-aos="flip-down" data-aos-delay="500" data-aos-duration="1000" id="tyr">
+                <img class="burgerbillede" src="images/avo.jpg" alt="burger">
+                <div class="alle" id="avo">
+                    <h2>Avocado mad</h2>
+                        <button class="btnplus">+</button>
+                    </div>
+            </div>
+            <div class="menuer" data-aos="flip-down" data-aos-delay="500" data-aos-duration="1000" id="vinno">
+                <img class="burgerbillede" src="images/rejer.jpg" alt="burger">
+                <div class="alle" id="rejer">
+                    <h2>Rejer</h2>
+                        <button class="btnplus">+</button>
+                    </div>
+            </div>
+            <div class="menuer" data-aos="flip-down" data-aos-delay="500" data-aos-duration="1000" id="sejt">
+                <img class="burgerbillede" src="images/granat.jpg" alt="burger">
+                <div class="alle" id="granat">
+                    <h2>Granatæble salat</h2>
+                        <button class="btnplus">+</button>
+                    </div>
+            </div>
+      
+
+        
+            <div class="menuer" data-aos="flip-down" data-aos-delay="500" data-aos-duration="1000" id="heltsikkert">
+                <img class="burgerbillede" src="images/burgerag.jpg" alt="burger">
+                <div class="alle" id="burgernr2">
+                    <h2>Burger</h2>
+                        <button class="btnplus">+</button>
+                    </div>
+            </div>
+            <div class="menuer" data-aos="flip-down" data-aos-delay="500" data-aos-duration="1000" id="islag">
+                <img class="burgerbillede" src="images/rundkage.jpg" alt="burger">
+                <div class="alle" id="rundkage">
+                    <h2>Sandkage</h2>
+                        <button class="btnplus">+</button>
+                    </div>
+            </div>
+            <div class="menuer" data-aos="flip-down" data-aos-delay="500" data-aos-duration="1000" id="slik">
+                <img class="burgerbillede" src="images/fishnchips.jpg" alt="burger">
+                <div class="alle" id="fishchips">
+                    <h2>Fish n´chips</h2>
+                        <button class="btnplus">+</button>
+                    </div>
+            </div>
+        </section>
+
+    </section>
+
+    <!-- Her bliver kurven vist -->
+    <div class="around">
+    <div class="kurven">
+    <div id="bestillinger"> 
+        <p class="tty">KURV</p> 
+        <h2 class="fis">Total</h2>
+        <div id="ialt"></div>
+        </div>
+        
+        <a href="check.html"><button class="betaling" id="betal">Betal</button></a>
+    </div>
+</div> 
+</div>
+
+  <!-- scripts -->
+  <script src="js/js.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+      AOS.init();
+  </script>
+</body>
+</html>

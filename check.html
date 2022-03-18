@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bestil</title>
+  <style>
+    .hshs{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .overover{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    
+    }
+    body{
+      color: black;
+    font-family: 'Epilogue', sans-serif;
+    }
+
+    h2{
+      font-size: 40px;
+    }
+    #kort{
+      width: 300px;
+      height: 100px;
+      margin-left: 200px;
+      margin-bottom: 40px;
+      border: none;
+      background-color: rgb(49, 49, 49);
+      color: white;
+      border-radius: 10px;
+      font-family: 'Epilogue', sans-serif;
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <section class="overover">
+  <section class="hshs">
+
+    <!-- er bliver listen vist -->
+    <div id="liste">
+    </div>
+  </section>
+
+  <!-- Her er betalingsknapperne -->
+    <div class="betalingsmetode">
+      <div class="betalingskort">
+        <a href="#"><button id="kort">betalingskort</button></a>
+      </div>
+      <div class="mobilepay">
+        <a href="#"><button id="kort">Mobilepay</button></a>
+      </div>
+      <div class="kontanter">
+        <a href="#"><button id="kort">Kontanter</button></a>
+      </div>
+    </div>
+  </section>
+
+    
+
+  </main>
+  <script>
+      // Bestillingslisten gemmer brugerens valg i localstorage
+      liste.innerHTML = localStorage.getItem("newlist")
+  </script>
+</body>
+</html>
